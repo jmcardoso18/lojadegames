@@ -49,6 +49,9 @@ import jakarta.validation.constraints.Size;
 		@UpdateTimestamp
 		private LocalDate data_cadastro;
 		
+		@NotBlank(message= "O atrituto quantidade do estoque é obrigatório!")
+		private String Foto;
+		
 		@ManyToOne
 		@JsonIgnoreProperties("produto")
 		private Categoria categoria;
@@ -99,6 +102,15 @@ import jakarta.validation.constraints.Size;
 
 		public void setData_cadastro(LocalDate data_cadastro) {
 			this.data_cadastro = data_cadastro;
+		}
+
+		
+		public String getFoto() {
+			return Foto;
+		}
+
+		public void setFoto(String foto) {
+			Foto = foto;
 		}
 
 		public Categoria getCategoria() {
